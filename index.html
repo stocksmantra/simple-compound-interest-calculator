@@ -1,46 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compound Interest</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Interest Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+
 </head>
+
 <body>
     <div class="container">
-        <div class="menu">
-            <div class="menu-item si active">Simple Interest</div>
-            <div class="menu-item ci">Compound Interest</div>
-        </div>
-    
-    <div class="form">
-        <div class="input-grp">
-            <label>Principal Amount <span class="required">*</span></label>
-            <input type="text" id="pa" placeholder="Ex : 1000" autocomplete="off">
-        </div>
-        <div class="input-grp">
-            <label>Interest Rate (in %) <span class="required">*</span></label>
-            <input type="text" id="ir" placeholder="Ex : 10" autocomplete="off">
-        </div>
-        <div class="input-grp">
-            <label>Duration in year <span class="required">*</span></label>
-            <input type="text" id="dy" placeholder="Ex : 1" autocomplete="off">
-        </div>
-        <div class="input-grp ci-freq">
-            <label> Compounding frequency in year <span class="required">*</span></label>
-            <input type="text" id="fy"placeholder="Ex : 1">
-        </div>
-    </div>
-    <div class="btn-wrapper">
-    <button class="btn">Calculator</button>
-</div>
-<div class="result">
-    <strong>Total Amount:</strong>
-    <span class="total-amount">10000</span></span>
-</div>
-</div>
+        <h1>INTEREST CALCULATOR</h1>
 
+        <form method="post" action="" onsubmit="calculateInterest(event)">
+            <label for="interestType">Select Interest Type:</label>
+            <select name="interestType" id="interestType" required>
+                <option value="simple">Simple Interest</option>
+                <option value="compound">Compound Interest</option>
+            </select><br><br>
+
+            <label for="principal">Principal Amount:</label>
+            <input type="number" name="principal" id="principal" required><br><br>
+
+            <label for="rate">Rate of Interest:</label>
+            <input type="number" step="0.01" name="rate" id="rate" required><br><br>
+
+            <label for="time">Time (in years):</label>
+            <input type="number" name="time" step="0.01" id="time" required><br><br>
+
+            <div class="center">
+                <input type="submit" name="calculate" value="Calculate">
+            </div>
+        </form>
+
+        <div id="resultContainer"></div>
+
+    </div>
 <script src="main.js"></script>
 </body>
 
